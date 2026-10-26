@@ -1,0 +1,66 @@
+:root {
+  --primary: #4f8a5b;
+  --primary-dark: #2f5d46;
+  --soft: #e6f0e3;
+  --accent: #e9d98b;
+  --bg: #f6faf3;
+  --text: #1f3a2d;
+  --muted: #5c7566;
+  --radius: 1.2rem;
+  --hover: #e9ece7;
+  --pressed: #dde1db;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    outline: none; 
+    border: none; 
+    text-decoration: none; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 6rem; 
+}
+
+body { 
+    font-family: 'Nunito', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+}
+
+h1, h2, h3, .navbar-logo {
+    font-family: 'Fraunces', serif; 
+}
+
+:focus-visible { 
+    outline: 2px solid #7a8a80; 
+    outline-offset: 3px; 
+}
+
+input:focus, input:focus-visible { 
+    outline: none; 
+}
+
+@media (max-width: 1366px) { html { font-size: 75%; } }
+@media (max-width: 758px) {
+ html { font-size: 62.5%; }
+ .menu p, .products p, .contact p { font-size: 1.5rem; }
+}
+@media (max-width: 450px) { html { font-size: 55%; } }
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ * { transition: none !important; animation: none !important; }
+}
+/* ===== NAVBAR (Anggota 2) ===== */
+/* ===== SEARCH (Anggota 2) ===== */
+/* ===== HERO (Anggota 2) ===== */
+/* ===== ABOUT (Anggota 3) ===== */
+/* ===== KOLEKSI (Anggota 3) ===== */
+/* ===== PRODUK, MODAL, TOAST (Anggota 3) ===== */
+/* ===== KERANJANG (Anggota 4) ===== */
+/* ===== KONTAK (Anggota 4) ===== */
+/* ===== FOOTER (Anggota 4) ===== */
+/* ===== RESPONSIVE (Anggota 2, media query) ===== */
