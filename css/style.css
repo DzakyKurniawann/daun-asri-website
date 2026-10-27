@@ -219,5 +219,74 @@ input:focus, input:focus-visible {
 /* ===== PRODUK, MODAL, TOAST (Anggota 3) ===== */
 /* ===== KERANJANG (Anggota 4) ===== */
 /* ===== KONTAK (Anggota 4) ===== */
+/* ===== PRODUK ===== */
+.products .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+  width: 20rem;
+}
+
+.products .product-card img {
+  height: 15rem;
+  object-fit: cover;
+}
+
+.products .product-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.products .product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ===== KONTAK ===== */
+.contact .row {
+  display: flex;
+  background-color: #222;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
 /* ===== FOOTER (Anggota 4) ===== */
 /* ===== RESPONSIVE (Anggota 2, media query) ===== */
