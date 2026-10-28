@@ -55,12 +55,238 @@ input:focus, input:focus-visible {
  * { transition: none !important; animation: none !important; }
 }
 /* ===== NAVBAR (Anggota 2) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+  position: relative;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Navbar search form */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: none;
+}
+
+.cart-count.show {
+  display: inline-block;
+}
 /* ===== SEARCH (Anggota 2) ===== */
 /* ===== HERO (Anggota 2) ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+  width: 100%;
+}
+
+.hero .content h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
 /* ===== ABOUT (Anggota 3) ===== */
+.about, .products, .contact {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2, .products h2, .contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span, .products h2 span, .contact h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
 /* ===== KOLEKSI (Anggota 3) ===== */
 /* ===== PRODUK, MODAL, TOAST (Anggota 3) ===== */
 /* ===== KERANJANG (Anggota 4) ===== */
 /* ===== KONTAK (Anggota 4) ===== */
+/* ===== PRODUK ===== */
+.products .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+  width: 20rem;
+}
+
+.products .product-card img {
+  height: 15rem;
+  object-fit: cover;
+}
+
+.products .product-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.products .product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ===== KONTAK ===== */
+.contact .row {
+  display: flex;
+  background-color: #222;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
 /* ===== FOOTER (Anggota 4) ===== */
 /* ===== RESPONSIVE (Anggota 2, media query) ===== */
