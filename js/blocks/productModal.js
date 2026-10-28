@@ -1,47 +1,47 @@
+// Blok: modal detail produk
+import { $ } from '../utils/dom.js';
 import { Stars } from '../elements/stars.js';
+import { PriceTag } from '../elements/priceTag.js';
+import { StockBadge } from '../elements/stockBadge.js';
+import { showToast } from '../components/toast.js';
+import { addToCart, closeModal, getPlant, getState, remainingStock } from '../state/store.js';
 
-export function initProductModal() {
-  const modal = document.getElementById('productModal');
-  const closeBtn = document.getElementById('modal-close');
+export function init() {
+  const modal = $('#item-detail-modal');
 
-  function closeModal() {
-    modal.classList.remove('active');
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-
-  window.addEventListener('click', (e) => {
+  $('#modal-add').addEventListener('click', (e) => {
+    e.preventDefault();
+    const { activeId } = getState();
+    if (activeId === null) return;
+    const plant = addToCart(activeId);
+    if (plant) showToast(`${plant.name} ditambahkan ke keranjang`);
+  });
+  $('.modal .close-icon').addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+  modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
-
-  window.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
+}
 
-  return {
-    open(plant) {
-      document.getElementById('modal-img').src = plant.image;
-      document.getElementById('modal-name').textContent = plant.name;
-      document.getElementById('modal-desc').textContent = plant.description;
-      document.getElementById('modal-price').textContent = `Rp ${plant.price.toLocaleString()}`;
-      document.getElementById('modal-stars').innerHTML = Stars(plant.rating || 5);
-      
-      const stockEl = document.getElementById('modal-stock');
-      stockEl.textContent = plant.remaining > 0 ? `Stok tersedia: ${plant.remaining}` : 'Stok Habis';
-      
-      const addBtn = document.getElementById('modal-add');
-      if (plant.remaining === 0) {
-        addBtn.setAttribute('disabled', 'true');
-        addBtn.textContent = 'Stok Habis';
-      } else {
-        addBtn.removeAttribute('disabled');
-        addBtn.textContent = 'Tambah ke Keranjang';
-      }
+export function render() {
+  const { activeId } = getState();
+  $('#item-detail-modal').style.display = activeId === null ? 'none' : 'flex';
+  if (activeId === null) return;
 
-      modal.classList.add('active');
-    },
-    close: closeModal
-  };
+  const plant = getPlant(activeId);
+  const remaining = remainingStock(plant);
+  $('#modal-img').src = plant.productImg || plant.img;
+  $('#modal-img').alt = plant.name;
+  $('#modal-name').textContent = plant.name;
+  $('#modal-desc').textContent = plant.desc;
+  $('#modal-stars').innerHTML = Stars(plant.stars);
+  $('#modal-price').innerHTML = PriceTag(plant.price, plant.old);
+  $('#modal-stock').innerHTML = StockBadge(remaining);
+  $('#modal-add').classList.toggle('disabled', remaining === 0);
+  $('#modal-add-text').textContent = remaining === 0 ? 'Stok habis' : 'Tambah ke keranjang';
 }
