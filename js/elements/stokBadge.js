@@ -1,8 +1,4 @@
-export function StockBadge(remaining) {
-  if (remaining === 0) {
-    return `<span class="product-stock out">Stok habis</span>`;
-  } else if (remaining <= 3) {
-    return `<span class="product-stock low">Stok sisa ${remaining}</span>`;
-  }
-  return `<span class="product-stock">Stok tersedia (${remaining})</span>`;
-}
+export const StockBadge = (remaining) => {
+  const cls = remaining === 0 ? 'out' : remaining <= 3 ? 'low' : '';
+  return `<div class="product-stock ${cls}">${remaining === 0 ? 'Stok habis' : 'Stok: ' + remaining}</div>`;
+};

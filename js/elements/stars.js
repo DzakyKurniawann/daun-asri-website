@@ -1,8 +1,2 @@
-export function Stars(rating = 5) {
-  let html = '<div class="star-full">';
-  for (let i = 0; i < 5; i++) {
-    html += i < rating ? '★' : '☆';
-  }
-  html += '</div>';
-  return html;
-}
+export const Stars = (rating) =>
+  [1, 2, 3, 4, 5].map((i) => `<i data-feather="star" class="${i <= rating ? 'star-full' : ''}"></i>`).join('');

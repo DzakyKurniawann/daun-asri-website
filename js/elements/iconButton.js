@@ -1,3 +1,2 @@
-export function IconButton(action, iconClass, label) {
-  return `<button class="icon-btn" data-action="${action}"><i class="${iconClass}"></i> ${label || ''}</button>`;
-}
+export const IconButton = ({ icon, label, action, disabled = false }) =>
+  `<a href="#" class="${disabled ? 'disabled' : ''}" data-action="${action}" aria-label="${label}" aria-disabled="${disabled}"><i data-feather="${icon}"></i></a>`;
