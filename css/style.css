@@ -97,32 +97,54 @@ input:focus, input:focus-visible {
   position: relative;
 }
 
-.navbar .navbar-extra a:hover {
-  color: var(--primary);
+.cart-count {
+  position: absolute; top: -0.2rem; right: -0.2rem;
+  min-width: 1.6rem; height: 1.6rem; padding: 0 0.3rem;
+  background: var(--primary); color: #fff; border-radius: 1rem;
+  font-size: 1rem; font-weight: 700; display: none; align-items: center; justify-content: center;
 }
+.cart-count.show { display: flex; }
 
 #hamburger-menu {
   display: none;
 }
 
 /* Navbar search form */
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background-color: var(--primary);
-  color: #fff;
-  border-radius: 50%;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-  display: none;
+.navbar .search-form {
+  position: absolute; top: 100%; right: 7%;
+  background-color: #fff; width: 50rem; height: 5rem;
+  display: flex; align-items: center;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 10px 30px rgba(47, 93, 70, 0.15);
+  transform: scaleY(0); transform-origin: top; transition: 0.3s;
 }
+.navbar .search-form.active { transform: scaleY(1); }
+.navbar .search-form input { height: 100%; width: 100%; font-size: 1.6rem; color: var(--text); padding: 1rem 1.5rem; background: none; }
+.navbar .search-form button { cursor: pointer; background: none; color: var(--primary-dark); width: 4.4rem; height: 4.4rem; margin-right: 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
-.cart-count.show {
-  display: inline-block;
+/* Cart */
+.shopping-cart {
+  position: absolute; top: 100%; right: -100%;
+  height: calc(100vh - 100%); width: 35rem; padding: 1.5rem; display: flex; flex-direction: column;
+  background-color: #fff; color: var(--text);
+  box-shadow: -10px 10px 30px rgba(47, 93, 70, 0.15);
+  transition: 0.3s;
 }
-/* ===== SEARCH (Anggota 2) ===== */
+.shopping-cart.active { right: 0; }
+.cart-title { font-size: 1.8rem; color: var(--primary-dark); }
+.shopping-cart .cart-item {
+  margin: 1.5rem 0; display: flex; align-items: center; gap: 1.5rem;
+  padding-bottom: 1rem; border-bottom: 1px dashed #b9d0b4; position: relative;
+}
+.shopping-cart img { height: 6rem; width: 6rem; object-fit: cover; border-radius: 50%; background: var(--soft); }
+.shopping-cart h3 { font-size: 1.4rem; padding-bottom: 0.4rem; }
+.shopping-cart .item-price { font-size: 1.2rem; color: var(--muted); }
+.shopping-cart .remove-item { position: absolute; top: 0; right: 0; cursor: pointer; background: none; color: var(--muted); padding: 0.5rem; border-radius: 50%; display: flex; }
+.shopping-cart .remove-item:hover { background: var(--hover); color: #c0504d; }
+.shopping-cart .remove-item:active { background: var(--pressed); }
+.cart-empty { font-size: 1.3rem; color: var(--muted); margin-top: 1.5rem; line-height: 1.6; }
+.cart-total { font-size: 1.5rem; font-weight: 700; margin-top: auto; padding-top: 1.2rem; border-top: 1px solid #d5e6d0; color: var(--primary-dark); display: flex; justify-content: space-between; }
+
 /* ===== HERO (Anggota 2) ===== */
 .hero {
   min-height: 100vh;
