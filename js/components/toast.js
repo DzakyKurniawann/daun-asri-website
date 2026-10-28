@@ -1,15 +1,11 @@
-let timeoutId = null;
+// Komponen: notifikasi singkat di bawah layar
+import { $ } from '../utils/dom.js';
 
-export function showToast(pesan) {
-  const toast = document.getElementById('toast');
-  if (!toast) return;
-  
-  toast.textContent = pesan;
-  toast.classList.add('show');
-  
-  if (timeoutId) clearTimeout(timeoutId);
-  
-  timeoutId = setTimeout(() => {
-    toast.classList.remove('show');
-  }, 1800);
+let timer;
+export function showToast(message) {
+  const el = $('#toast');
+  el.textContent = message;
+  el.classList.add('show');
+  clearTimeout(timer);
+  timer = setTimeout(() => el.classList.remove('show'), 1800);
 }
