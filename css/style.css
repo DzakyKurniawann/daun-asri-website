@@ -286,4 +286,13 @@ input:focus, input:focus-visible {
   color: #fff; background-color: var(--primary); border-radius: 3rem; cursor: pointer; transition: 0.2s;
 }
 /* ===== FOOTER (Anggota 4) ===== */
+footer { background-color: var(--primary-dark); text-align: center; padding: 1rem 0 3rem; margin-top: 6rem; color: #dcebd7; }
+footer .socials { padding: 1.5rem 0 1rem; }
+footer .socials a { color: #fff; margin: 1rem; }
+footer .socials a:hover, footer .links a:hover { color: var(--accent); }
+footer .links { margin-bottom: 1.4rem; }
+footer .links a { color: #fff; padding: 0.7rem 1rem; }
+footer .credit { font-size: 0.9rem; }
+footer .credit b { color: var(--accent); }
+
 /* ===== RESPONSIVE (Anggota 2, media query) ===== */
