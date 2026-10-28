@@ -273,42 +273,17 @@ input:focus, input:focus-visible {
 }
 
 /* ===== KONTAK ===== */
-.contact .row {
-  display: flex;
-  background-color: #222;
-}
-
-.contact .row form {
-  flex: 1 1 45rem;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
+.contact .row { display: flex; margin-top: 2rem; background-color: var(--soft); border-radius: var(--radius); overflow: hidden; }
+.contact .row .map { flex: 1 1 45rem; width: 100%; min-height: 30rem; filter: saturate(0.8); }
+.contact .row form { flex: 1 1 45rem; padding: 5rem 2rem; text-align: center; }
 .contact .row form .input-group {
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: var(--bg);
-  border: 1px solid #eee;
+  display: flex; align-items: center; margin-top: 2rem; background-color: #fff;
+  border: 1px solid #b9d0b4; border-radius: 0.8rem; padding-left: 2rem; color: var(--primary);
 }
-
-.contact .row form .input-group input {
-  width: 100%;
-  padding: 1.2rem;
-  font-size: 1.2rem;
-  background: none;
-  color: #fff;
-}
-
+.contact .row form .input-group input { width: 100%; padding: 1.6rem; font-size: 1.5rem; background: none; color: var(--text); }
 .contact .row form .btn {
-  margin-top: 2rem;
-  display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.2rem;
-  color: #fff;
-  background-color: var(--primary);
-  cursor: pointer;
-  border-radius: 0.5rem;
+  margin-top: 3rem; display: inline-block; padding: 1.1rem 3.5rem; font-size: 1.5rem; font-weight: 600;
+  color: #fff; background-color: var(--primary); border-radius: 3rem; cursor: pointer; transition: 0.2s;
 }
 /* ===== FOOTER (Anggota 4) ===== */
 /* ===== RESPONSIVE (Anggota 2, media query) ===== */
