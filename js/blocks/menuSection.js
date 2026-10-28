@@ -1,8 +1,8 @@
+// Blok: section koleksi tanaman
+import { $ } from '../utils/dom.js';
 import { MenuCard } from '../components/menuCard.js';
+import { getAllPlants, remainingStock } from '../state/store.js';
 
-export function renderMenuSection(plants) {
-  const menuList = document.getElementById('menu-list');
-  if (!menuList) return;
-  
-  menuList.innerHTML = plants.map(plant => MenuCard(plant)).join('');
+export function render() {
+  $('#menu-list').innerHTML = getAllPlants().map((p) => MenuCard(p, remainingStock(p))).join('');
 }
