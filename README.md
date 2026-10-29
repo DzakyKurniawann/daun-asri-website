@@ -41,7 +41,12 @@ Issue #1 Setup struktur proyek, data, dan state
 ### Anggota 2 - Navigasi dan Hero (@MUFID911)
 - Issue #2 dan #3 (branch navbar-hero dan search)
 - File: js/blocks/navbar.js, js/blocks/searchBar.js, area Navbar, Search, Hero pada index.html dan css/style.css
+
 <!-- Anggota 3 -->
+### Anggota 3 - Katalog dan Produk (@moentium)
+- Issue #4 dan #5 (branch about-collection dan products-modal)
+- File: stars, priceTag, iconButton, stockBadge, menuCard, productCard, toast, menuSection, productSection, productModal
+
 <!-- Anggota 4 -->
 ### Anggota 4 - Transaksi dan Kontak (@Kharslwwy)
 - Issue #6 dan #7 (branch cart dan contact-footer)
