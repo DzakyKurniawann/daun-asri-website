@@ -38,6 +38,9 @@ components memakai elements, blocks memakai components dan store.
 Issue #1 Setup struktur proyek, data, dan state
 
 <!-- Anggota 2 -->
+### Anggota 2 - Navigasi dan Hero (@MUFID911)
+- Issue #2 dan #3 (branch navbar-hero dan search)
+- File: js/blocks/navbar.js, js/blocks/searchBar.js, area Navbar, Search, Hero pada index.html dan css/style.css
 <!-- Anggota 3 -->
 <!-- Anggota 4 -->
 ### Anggota 4 - Transaksi dan Kontak (@Kharslwwy)
